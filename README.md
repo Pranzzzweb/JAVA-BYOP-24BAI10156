@@ -1,63 +1,149 @@
-# Campus Course & Records Manager (CCRM)
+# 📚 Course & Student Management System (Java)
 
-## Project Overview
-The **Campus Course & Records Manager (CCRM)** is a Java SE console-based application that helps an institute manage academic records.  
-It provides menus and commands for **student management**, **course management**, **enrollments**, **grades**, **transcripts**, and **file utilities** like import/export and backups.
+## 📌 Overview
 
-This project demonstrates:
-- **Object-Oriented Programming** (Encapsulation, Inheritance, Abstraction, Polymorphism).  
-- **Advanced Java** features: Streams, Enums, Exceptions, Date/Time API.  
-- **Design Patterns**: Singleton (AppConfig), Builder (Course creation).  
-- **File I/O** with NIO.2, recursive utilities, CSV import/export.  
-- **CLI Menus** using switch/loops, exception handling, and custom validations.  
+This project is a Java-based application designed to manage students, courses, and enrollments in an organized and efficient way. It simulates a real-world academic management system where students can be enrolled in courses, and their data can be stored, retrieved, and managed easily.
+
+The project focuses on applying core Object-Oriented Programming (OOP) concepts and file handling in Java to solve a practical problem faced in educational institutions.
 
 ---
 
-## ● Evolution of Java (short timeline)
-- 1995 → Java 1.0 (first release, applets, AWT).  
-- 1997 → Java 1.1 (inner classes, JavaBeans, JDBC).  
-- 1998 → Java 2 (SE 1.2) – Swing, Collections, Plug-in.  
-- 2002 → Java SE 1.4 – assert keyword, Exception chaining, NIO.  
-- 2004 → Java SE 5.0 – Generics, Annotations, Autoboxing, Enhanced for loop.  
-- 2006 → Java SE 6 – Performance boost, Scripting API.  
-- 2011 → Java SE 7 – Try-with-resources, diamond operator, nio.2.  
-- 2014 → Java SE 8 – Lambdas, Streams, new Date/Time API.  
-- 2017 → Java SE 9 – Module system, JShell.  
-- 2018 → Java SE 11 (LTS) – var, improved APIs.  
-- 2021 → Java SE 17 (LTS) – Records, Sealed classes, Pattern matching.  
-- 2023 → Java SE 21 (LTS) – Latest refinements, performance upgrades.  
+## ❗ Problem Statement
+
+In many small institutions or informal setups, managing student records and course enrollments is often done manually, leading to errors, redundancy, and inefficiency.
+
+This project aims to provide a simple system to:
+
+* Store student and course data
+* Manage enrollments
+* Avoid duplication and maintain consistency
 
 ---
 
-## ● Java Editions: ME vs SE vs EE
+## 🎯 Objectives
 
-| Edition | Purpose | Features | Platforms |
-|---------|---------|----------|-----------|
-| **Java ME** (Micro) | For embedded & IoT devices | CLDC, CDC, small runtime | IoT, feature phones |
-| **Java SE** (Standard) | General-purpose apps | Core libraries, JDK tools, JVM | Desktop, laptops, servers |
-| **Java EE** (Enterprise, Jakarta EE) | Enterprise apps | Servlets, JSP, JPA, JMS, CDI | App servers, enterprise backends |
-
----
-
-## ● Java Architecture: JDK, JRE, JVM
-
-- **JVM (Java Virtual Machine)** – Executes compiled bytecode (`.class` files).  
-- **JRE (Java Runtime Environment)** – JVM + libraries to *run* Java apps.  
-- **JDK (Java Development Kit)** – JRE + compiler (`javac`), debugger, dev tools.  
-
-👉 **Flow**: Developer uses **JDK** to compile → **JRE** provides runtime → **JVM** executes.  
+* To implement a structured system for managing students and courses
+* To apply OOP concepts like classes, inheritance, and encapsulation
+* To handle data storage using file handling
+* To ensure validation and error handling in operations
 
 ---
 
-## ● Install & Configure Java on Windows
+## ⚙️ Features
 
-1. Download JDK (e.g., JDK 17).  
-2. Run installer → select path (e.g., `C:\Program Files\Java\jdk-17`).  
-   ![Install](screenshots/install.png)  
-3. Set environment variables:  
-   - `JAVA_HOME` = path to JDK  
-   - Add `%JAVA_HOME%\bin` to PATH  
-4. Verify:  
-   ```bash
-   java -version
-   javac -version
+* 👤 Student Management
+
+  * Add and manage student details
+  * Unique identification for each student
+
+* 📖 Course Management
+
+  * Create and manage courses
+  * Store course-related information
+
+* 🔗 Enrollment System
+
+  * Enroll students into courses
+  * Prevent duplicate enrollments
+  * Enforce credit limits
+
+* 💾 File Handling
+
+  * Import/export data using CSV files
+  * Backup functionality
+
+* ⚠️ Exception Handling
+
+  * Handles cases like duplicate enrollment
+  * Credit limit exceeded validation
+
+---
+
+## 🛠️ Technologies Used
+
+* Java
+* Object-Oriented Programming (OOP)
+* File Handling (CSV)
+* Exception Handling
+
+---
+
+## 📂 Project Structure
+
+```id="r9mq1p"
+src/
+ └── edu/ccrm/
+      ├── domain/        # Core classes (Student, Course, etc.)
+      ├── service/       # Business logic (Enrollment, Course handling)
+      ├── io/            # File handling (Import/Export, Backup)
+      ├── util/          # Utility classes (Validation, Recursion)
+test-data/               # Sample CSV data
+```
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repository:
+
+```id="3bq9gd"
+git clone https://github.com/your-username/your-repo-name.git
+```
+
+2. Navigate to the project folder:
+
+```id="1y9rpn"
+cd your-repo-name
+```
+
+3. Compile the project:
+
+```id="d4fh4x"
+javac -d . src/edu/ccrm/**/*.java
+```
+
+4. Run the main class:
+
+```id="f2k8nl"
+java edu.ccrm.Main
+```
+
+---
+
+## 🚧 Challenges Faced
+
+* Managing relationships between students, courses, and enrollments
+* Implementing proper validation without overcomplicating logic
+* Handling file input/output efficiently
+* Designing a modular and scalable structure
+
+---
+
+## 📈 Future Improvements
+
+* Add a graphical user interface (GUI)
+* Integrate with a database instead of CSV files
+* Add authentication system for admin/users
+* Improve user interaction and reporting features
+
+---
+
+## 📚 What I Learned
+
+* Practical implementation of OOP concepts
+* Structuring a real-world Java project
+* Handling data using file operations
+* Writing clean, modular, and maintainable code
+
+---
+
+## 👤 Author
+
+**Pranjali Sharma
+  24BAI10156**
+
+---
+
+## 📌 Note
+
+This project was developed as part of a BYOP (Bring Your Own Project) assignment to apply Java programming concepts in a real-world scenario.
